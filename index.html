@@ -14,18 +14,12 @@
                 min-height: 100vh;
             }
 
-            /* Header Styling */
             #header {
                 position: relative;
                 text-align: center;
                 padding: 20px 0;
                 background-color: #000;
                 box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-            }
-
-            #header .header-top {
-                text-align: center;
-                margin-bottom: 5px;
             }
 
             #header h1 {
@@ -36,10 +30,10 @@
 
             #header .header-bottom {
                 display: flex;
-                justify-content: center; /* Centers the buttons */
+                justify-content: center;
                 align-items: center;
                 margin-top: 10px;
-                flex-wrap: wrap; /* Allows elements to wrap in mobile view */
+                flex-wrap: wrap;
             }
 
             #nav {
@@ -48,10 +42,6 @@
                 gap: 15px;
                 margin: 0;
                 padding: 0;
-            }
-
-            #nav li {
-                display: inline;
             }
 
             #nav a {
@@ -68,7 +58,6 @@
                 border-color: #fff;
             }
 
-            /* Main Container */
             #main {
                 display: flex;
                 justify-content: center;
@@ -79,7 +68,6 @@
                 flex-wrap: wrap;
             }
 
-            /* Main Image Section */
             #main-image {
                 flex: 3;
                 position: relative;
@@ -112,7 +100,6 @@
                 font-size: 1.2em;
             }
 
-            /* Overlay Buttons */
             .overlay-buttons {
                 position: absolute;
                 top: 10px;
@@ -137,7 +124,6 @@
                 color: #000;
             }
 
-            /* Thumbnails Container */
             #thumbnails {
                 flex: 1;
                 display: grid;
@@ -149,16 +135,6 @@
                 box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
                 overflow-y: auto;
                 max-height: 80vh;
-            }
-
-            .thumbnail {
-                aspect-ratio: 1 / 1;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: #f4f4f4;
-                border-radius: 8px;
-                overflow: hidden;
             }
 
             .thumbnail img {
@@ -174,7 +150,6 @@
                 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
             }
 
-            /* Footer Styling */
             #footer {
                 text-align: center;
                 padding: 15px;
@@ -184,64 +159,7 @@
                 border-top: 1px solid #333;
             }
 
-            /* Custom Scrollbar */
-            ::-webkit-scrollbar {
-                width: 8px;
-            }
-
-            ::-webkit-scrollbar-thumb {
-                background-color: #708090;
-                border-radius: 10px;
-            }
-
-            ::-webkit-scrollbar-track {
-                background: #000;
-            }
-
-            /* Scroll Arrows */
-            .scroll-arrow {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                font-size: 2em;
-                color: rgba(255, 255, 255, 0.7);
-                cursor: pointer;
-                z-index: 10;
-                user-select: none;
-                transition: color 0.3s;
-            }
-
-            .scroll-arrow:hover {
-                color: rgba(255, 255, 255, 1);
-            }
-
-            .left-arrow {
-                left: 10px;
-            }
-
-            .right-arrow {
-                right: 10px;
-            }
-
-            /* Responsive Design */
             @media (max-width: 768px) {
-                #header {
-                    padding: 10px;
-                }
-
-                #header h1 {
-                    font-size: 1.8em;
-                }
-
-                #header .header-bottom {
-                    flex-direction: column;
-                    gap: 10px;
-                }
-
-                #nav {
-                    justify-content: center; /* Centers buttons in mobile view */
-                }
-
                 #main {
                     flex-direction: column;
                 }
@@ -254,14 +172,11 @@
                     grid-template-columns: repeat(3, 1fr);
                 }
             }
-
         </style>
     </head>
     <body>
         <header id="header">
-            <div class="header-top">
-                <h1>Lens</h1>
-            </div>
+            <h1>Lens</h1>
             <div class="header-bottom">
                 <ul id="nav">
                     <li><a href="index.html">Explore</a></li>
@@ -270,158 +185,30 @@
             </div>
         </header>
 
-        <!-- Main Content -->
         <div id="main">
-            <!-- Main Image Section -->
             <div id="main-image">
                 <div class="overlay-buttons">
                     <button class="overlay-button" id="share-button">Share</button>
                     <button class="overlay-button" id="fullscreen-button">Full Screen</button>
                 </div>
-                <div class="scroll-arrow left-arrow" id="left-arrow">&#10094;</div>
                 <img src="images/fulls/01.jpg" alt="Main Image" id="displayed-image" />
-                <div class="scroll-arrow right-arrow" id="right-arrow">&#10095;</div>
-                <div class="description" id="image-description">Bhaleshwor Mahadev: A tranquil temple atop Chandragiri Hills, blending spirituality with breathtaking mountain views.</div>
+                <div class="description" id="image-description">Default description</div>
             </div>
 
-            <!-- Thumbnails -->
             <div id="thumbnails">
-		                <div class="thumbnail">
-		                    <img src="images/thumbs/01.JPG" alt="Bhaleshwor Mahadev: A tranquil temple atop Chandragiri Hills, blending spirituality with breathtaking mountain views." onclick="changeImage('images/fulls/01.JPG', 'Bhaleshwor Mahadev: A tranquil temple atop Chandragiri Hills, blending spirituality with breathtaking mountain views.')" />
-				</div>
-		        	<div class="thumbnail">
-					<img src="images/thumbs/02.jpg" alt="Prayer Flags" onclick="changeImage('images/fulls/02.jpg', 'Prayer Flags')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/03.jpg" alt="A serene beach with a watchtower" onclick="changeImage('images/fulls/03.jpg', 'A serene beach with a watchtower')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/04.jpg" alt="A picturesque mountain view" onclick="changeImage('images/fulls/04.jpg', 'A picturesque mountain view')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/05.jpg" alt="Peppu ❤️" onclick="changeImage('images/fulls/05.jpg', 'Peppu ❤️')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/06.jpg" alt="Chapar Chiri, Mohali: A historical site honoring Sikh bravery, featuring the iconic Fateh Burj monument." onclick="changeImage('images/fulls/06.jpg', 'Chapar Chiri, Mohali: A historical site honoring Sikh bravery, featuring the iconic Fateh Burj monument.')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/07.jpg" alt="Swayambhunath Temple: Kathmandus iconic Monkey Temple, a timeless symbol of spirituality and architectural beauty." onclick="changeImage('images/fulls/07.jpg', 'Swayambhunath Temple: Kathmandus iconic Monkey Temple, a timeless symbol of spirituality and architectural beauty.')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/08.jpg" alt="Lamp" onclick="changeImage('images/fulls/08.jpg', 'Lamp')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/09.jpg" alt="Vagator Beach, Goa: A stunning coastline with red cliffs, golden sands, and vibrant sunsets." onclick="changeImage('images/fulls/09.jpg', 'Vagator Beach, Goa: A stunning coastline with red cliffs, golden sands, and vibrant sunsets.')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/10.jpg" alt="A unique Ganesh-shaped sea shell found in Pondicherry, a beautiful reminder of nature’s artistry." onclick="changeImage('images/fulls/10.jpg', 'A unique Ganesh-shaped sea shell found in Pondicherry, a beautiful reminder of nature’s artistry.')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/11.jpg" alt="Feet on the beach: A simple yet grounding moment, feeling the sand and waves connect." onclick="changeImage('images/fulls/11.jpg', 'Feet on the beach: A simple yet grounding moment, feeling the sand and waves connect.')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/12.jpg" alt="A resilient plant by the seashore, thriving amidst the salty breeze and sandy terrain." onclick="changeImage('images/fulls/12.jpg', 'A resilient plant by the seashore, thriving amidst the salty breeze and sandy terrain.')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/13.jpg" alt="Luna ❤️" onclick="changeImage('images/fulls/13.jpg', 'Luna ❤️')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/14.jpg" alt="Zostel Coorg Treehouse: A serene retreat amidst lush greenery, offering breathtaking views and ultimate tranquility." onclick="changeImage('images/fulls/14.jpg', 'Zostel Coorg Treehouse: A serene retreat amidst lush greenery, offering breathtaking views and ultimate tranquility.')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/15.jpg" alt="Zostel Kathmandu: Vibrant Kali Devi graffiti adding a touch of art and culture to the hostel's lively atmosphere." onclick="changeImage('images/fulls/15.jpg', 'Zostel Kathmandu: Vibrant Kali Devi graffiti adding a touch of art and culture to the hostel's lively atmosphere.')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/16.jpg" alt="Logan Park, Dunedin-New Zealand" onclick="changeImage('images/fulls/16.jpg', 'Logan Park, Dunedin-New Zealand')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/17.jpg" alt="Swayambhunath Temple in Kathmandu: a serene blend of golden stupas, prayer flags, and spirituality." onclick="changeImage('images/fulls/17.jpg', 'Swayambhunath Temple in Kathmandu: a serene blend of golden stupas, prayer flags, and spirituality.')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/18.jpg" alt="Brighton Beach, Dunedin: A serene coastal escape with golden sands, rolling waves, and breathtaking sunsets." onclick="changeImage('images/fulls/18.jpg', 'Brighton Beach, Dunedin: A serene coastal escape with golden sands, rolling waves, and breathtaking sunsets.')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/19.jpg" alt="Black & White" onclick="changeImage('images/fulls/19.jpg', 'Black & White')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/20.jpg" alt="Goa ❤️" onclick="changeImage('images/fulls/20.jpg', 'Goa ❤️')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/21.jpg" alt="Temple, Jammu & Kashmir" onclick="changeImage('images/fulls/21.jpg', 'Temple, Jammu & Kashmir')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/22.jpg" alt="The Southern Lights in New Zealand are nature’s poetry, painting the night sky with whispers of magic." onclick="changeImage('images/fulls/22.jpg', 'The Southern Lights in New Zealand are nature’s poetry, painting the night sky with whispers of magic.')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/23.jpg" alt="Beneath the Southern Lights, time stands still, and the universe feels within reach." onclick="changeImage('images/fulls/23.jpg', 'Beneath the Southern Lights, time stands still, and the universe feels within reach.')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/24.jpg" alt="New Zealand’s Southern Lights remind us that the most beautiful things are found in the quietest moments." onclick="changeImage('images/fulls/24.jpg', 'New Zealand’s Southern Lights remind us that the most beautiful things are found in the quietest moments.')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/25.jpg" alt="The Southern Lights is a celestial performance that turns New Zealand's night skies into a masterpiece." onclick="changeImage('images/fulls/25.jpg', 'The Southern Lights is a celestial performance that turns New Zealand's night skies into a masterpiece.')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/26.jpg" alt="Auroras dancing over New Zealand’s skies are the earth’s way of saying, Look how beautiful I am." onclick="changeImage('images/fulls/26.jpg', 'Auroras dancing over New Zealand’s skies are the earth’s way of saying, Look how beautiful I am.')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/27.jpg" alt="Indigo-6E" onclick="changeImage('images/fulls/27.jpg', 'Indigo-6E')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/28.jpg" alt="Rock Beach Pondicherry" onclick="changeImage('images/fulls/28.jpg', 'Rock Beach Pondicherry')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/29.jpg" alt="What you looking at boy?" onclick="changeImage('images/fulls/29.jpg', 'What you looking at boy?')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/30.jpg" alt="St Kilda Beach, Dunedin: A stunning stretch of golden sands and crashing waves, perfect for peaceful escapes and breathtaking sunsets." onclick="changeImage('images/fulls/30.jpg', 'St Kilda Beach, Dunedin: A stunning stretch of golden sands and crashing waves, perfect for peaceful escapes and breathtaking sunsets.')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/31.jpg" alt="Dunedin" onclick="changeImage('images/fulls/31.jpg', 'Dunedin')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/32.jpg" alt="Clock Tower- University of Otago" onclick="changeImage('images/fulls/32.jpg', 'Clock Tower- University of Otago')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/33.jpg" alt="Craby" onclick="changeImage('images/fulls/33.jpg', 'Craby')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/34.jpg" alt="Diwali" onclick="changeImage('images/fulls/34.jpg', 'Diwali')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/35.jpg" alt="Nandi Hills Bangalore" onclick="changeImage('images/fulls/35.jpg', 'Nandi Hills Bangalore')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/36.jpg" alt="Clock Tower Dunedin" onclick="changeImage('images/fulls/36.jpg', 'Clock Tower Dunedin')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/37.jpg" alt="Dubare, Coorg: A serene riverside retreat famous for its elephant camp and lush green surroundings." onclick="changeImage('images/fulls/37.jpg', 'Dubare, Coorg: A serene riverside retreat famous for its elephant camp and lush green surroundings.')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/38.jpg" alt="Gentle giants of the wild." onclick="changeImage('images/fulls/38.jpg', 'Gentle giants of the wild.')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/39.jpg" alt="Strength wrapped in calm grace." onclick="changeImage('images/fulls/39.jpg', 'Strength wrapped in calm grace.')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/40.jpg" alt="Majestic souls, nature’s protectors." onclick="changeImage('images/fulls/40.jpg', 'Majestic souls, nature’s protectors.')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/41.jpg" alt="A serene view" onclick="changeImage('images/fulls/41.jpg', 'A serene view')" />
-				</div>
-				<div class="thumbnail">
-					<img src="images/thumbs/42.jpg" alt="Berries" onclick="changeImage('images/fulls/42.jpg', 'Berries')" />
-				</div>
-				
+                <div class="thumbnail">
+                    <img src="images/thumbs/01.jpg" alt="Sample Image" onclick="changeImage('images/fulls/01.jpg', 'Sample Image')" />
+                </div>
+                <div class="thumbnail">
+                    <img src="images/thumbs/02.jpg" alt="Another Image" onclick="changeImage('images/fulls/02.jpg', 'Another Image')" />
+                </div>
             </div>
-	</div>
+        </div>
 
-        <!-- Footer -->
         <footer id="footer">
             Brewed by Dhruv 🍺
         </footer>
 
-        <!-- JavaScript -->
         <script>
             document.getElementById('share-button').addEventListener('click', function () {
                 const imageUrl = document.getElementById('displayed-image').src;
@@ -443,53 +230,12 @@
                 }
             });
 
-            const thumbnails = document.querySelectorAll('.thumbnail img');
-            let currentIndex = 0;
-
             function changeImage(src, description) {
                 const displayedImage = document.getElementById('displayed-image');
                 const imageDescription = document.getElementById('image-description');
                 displayedImage.src = src;
-                imageDescription.innerText = description || 'No description available';
+                imageDescription.innerText = description;
             }
-
-            function scrollImage(direction) {
-                if (direction === 'left') {
-                    currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
-                } else if (direction === 'right') {
-                    currentIndex = (currentIndex + 1) % thumbnails.length;
-                }
-                const thumbnail = thumbnails[currentIndex];
-                const src = thumbnail.src.replace('thumbs', 'fulls');
-                const description = thumbnail.alt || 'No description available';
-                changeImage(src, description);
-            }
-
-            document.getElementById('left-arrow').addEventListener('click', function () {
-                scrollImage('left');
-            });
-
-            document.getElementById('right-arrow').addEventListener('click', function () {
-                scrollImage('right');
-            });
-
-            thumbnails.forEach((thumbnail, index) => {
-                thumbnail.addEventListener('click', () => {
-                    currentIndex = index;
-                    const src = thumbnail.src.replace('thumbs', 'fulls');
-                    const description = thumbnail.alt || 'No description available';
-                    changeImage(src, description);
-                });
-            });
-
-            document.addEventListener('keydown', function (event) {
-                if (event.key === 'ArrowLeft') {
-                    scrollImage('left');
-                } else if (event.key === 'ArrowRight') {
-                    scrollImage('right');
-                }
-            });
         </script>
     </body>
 </html>
-   
