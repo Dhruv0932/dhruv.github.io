@@ -482,7 +482,15 @@
                 });
             });
 
-            document.addEventListener('keydown', function (event) {
+	// Set default image and description on load
+	window.onload = function () {
+   	 const defaultSrc = 'images/fulls/01.jpg';
+    	const defaultDescription = 'Bhaleshwor Mahadev: A tranquil temple atop Chandragiri Hills, blending spirituality with breathtaking mountain views.';
+    	changeImage(defaultSrc, defaultDescription);
+	};
+
+
+        document.addEventListener('keydown', function (event) {
                 if (event.key === 'ArrowLeft') {
                     scrollImage('left');
                 } else if (event.key === 'ArrowRight') {
